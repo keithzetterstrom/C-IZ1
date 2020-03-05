@@ -3,4 +3,4 @@ project(iz1 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(iz1 main.c)
+add_executable(iz1 main.c matrix_work.c matrix_work.h)

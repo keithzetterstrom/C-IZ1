@@ -55,10 +55,8 @@ int array_of_count_elements_initialization(int ** matrix, int * array_of_count_e
 
 void result_vector_initialization(int ** matrix, int ** result_vector, int strings, int columns)
 {
-    int flag = 0;
-    for (int i = 0, k = 0; i < strings; ++i)
+    for (int i = 0, k = 0, flag = 0; i < strings; ++i)
     {
-        flag = 0;
         for (int j = 0, l = 0; j < columns; ++j)
         {
             if (matrix[i][j] != 0)
@@ -70,6 +68,7 @@ void result_vector_initialization(int ** matrix, int ** result_vector, int strin
         }
         if (flag)
             ++k;
+        flag = 0;
     }
 }
 
@@ -81,7 +80,7 @@ void matrix_free(int ** matrix, int strings)
     free(matrix);
 }
 
-
+/*
 void create_matrix(int ** matrix, int strings, int columns)
 {
     srand(time(NULL));
@@ -91,7 +90,7 @@ void create_matrix(int ** matrix, int strings, int columns)
         for (int j = 0; j < columns; ++j)
             matrix[i][j] = rand() % 9;
     }
-}
+}*/
 
 
 void print_matrix(int ** matrix, int strings, int columns)

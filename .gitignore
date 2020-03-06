@@ -2,6 +2,7 @@
 # Created by https://www.gitignore.io/api/c,clion
 # Edit at https://www.gitignore.io/?templates=c,clion
 main
+/help_func
 ### C ###
 # Prerequisites
 *.d

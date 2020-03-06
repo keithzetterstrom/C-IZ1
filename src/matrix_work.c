@@ -80,18 +80,6 @@ void matrix_free(int ** matrix, int strings)
     free(matrix);
 }
 
-/*
-void create_matrix(int ** matrix, int strings, int columns)
-{
-    srand(time(NULL));
-
-    for (int i = 0; i < strings; ++i)
-    {
-        for (int j = 0; j < columns; ++j)
-            matrix[i][j] = rand() % 9;
-    }
-}*/
-
 
 void print_matrix(int ** matrix, int strings, int columns)
 {

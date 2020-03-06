@@ -50,6 +50,9 @@ TEST(testMainFunc, test1)
         for (int j = 0; j < array_of_count_elements[i]; ++j)
             ASSERT_EQ(result_vector[i][j], test_vector[i][j]);
     }
+
+    matrix_free(matrix, strings);
+    matrix_free(result_vector, result_count_strings);
 }
 
 TEST(testMainFunc, test2)
@@ -87,6 +90,9 @@ TEST(testMainFunc, test2)
         for (int j = 0; j < array_of_count_elements[i]; ++j)
             ASSERT_EQ(result_vector[i][j], test_vector[i][j]);
     }
+
+    matrix_free(matrix, strings);
+    matrix_free(result_vector, result_count_strings);
 }
 
 TEST(testMainFunc, test3)
@@ -122,6 +128,9 @@ TEST(testMainFunc, test3)
         for (int j = 0; j < array_of_count_elements[i]; ++j)
             ASSERT_EQ(result_vector[i][j], test_vector[i][j]);
     }
+
+    matrix_free(matrix, strings);
+    matrix_free(result_vector, result_count_strings);
 }
 
 TEST(testMainFunc, test4)
@@ -156,5 +165,8 @@ TEST(testMainFunc, test4)
         for (int j = 0; j < array_of_count_elements[i]; ++j)
             ASSERT_EQ(result_vector[i][j], test_vector[i][j]);
     }
+
+    matrix_free(matrix, strings);
+    matrix_free(result_vector, result_count_strings);
 }
 

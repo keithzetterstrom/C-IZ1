@@ -18,9 +18,9 @@
     matrix:
         exclude:
             - os:       osx
-              compiler: gcc
+            compiler: gcc
     
-          - os:  osx
+            - os:  osx
             env: TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
     
     install:

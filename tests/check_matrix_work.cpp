@@ -52,7 +52,9 @@ TEST(testMainFunc, test1)
     }
 
     matrix_free(matrix, strings);
+    matrix_free(test_vector, result_count_strings);
     matrix_free(result_vector, result_count_strings);
+    free(array_of_count_elements);
 }
 
 TEST(testMainFunc, test2)
@@ -92,7 +94,9 @@ TEST(testMainFunc, test2)
     }
 
     matrix_free(matrix, strings);
+    matrix_free(test_vector, result_count_strings);
     matrix_free(result_vector, result_count_strings);
+    free(array_of_count_elements);
 }
 
 TEST(testMainFunc, test3)
@@ -130,7 +134,9 @@ TEST(testMainFunc, test3)
     }
 
     matrix_free(matrix, strings);
+    matrix_free(test_vector, result_count_strings);
     matrix_free(result_vector, result_count_strings);
+    free(array_of_count_elements);
 }
 
 TEST(testMainFunc, test4)
@@ -167,6 +173,8 @@ TEST(testMainFunc, test4)
     }
 
     matrix_free(matrix, strings);
+    matrix_free(test_vector, result_count_strings);
     matrix_free(result_vector, result_count_strings);
+    free(array_of_count_elements);
 }
 

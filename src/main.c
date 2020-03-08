@@ -10,20 +10,42 @@
 
 int main(int argc, char const *argv[])
 {
-    int strings = 3, columns = 2;
+    if (argc < 2)
+    {
+        printf("Enter count of strings and columns!");
+        return 1;
+    }
+
+    int strings = atoi(argv[1]);
+    int columns = atoi(argv[2]);
+    char num_input[3], * end;
 
     int ** matrix = (int**)malloc(strings * sizeof(int*));
+    if (matrix == NULL)
+        return 1;
     for (int i = 0; i < strings; ++i)
-        matrix[i] = (int*)malloc(columns * sizeof(int));
+    {
+        matrix[i] = (int *) malloc(columns * sizeof(int));
+        if (matrix[i] == NULL)
+            return 1;
+    }
 
-    matrix[0][0] = 1;
-    matrix[0][1] = 2;
-    matrix[1][0] = 1;
-    matrix[1][1] = 0;
-    matrix[2][0] = 0;
-    matrix[2][1] = 2;
+    for (int i = 0; i < strings; ++i)
+    {
+        for (int j = 0; j < columns; ++j)
+        {
+            fgets(num_input, 3, stdin);
+            matrix[i][j] = strtol(num_input, &end, 10);
+            memset(num_input, 0, 3);
+        }
+    }
 
     int ** result_vector = delete_nulls_from_matrix(matrix, strings, columns);
+    if (result_vector == NULL)
+    {
+        matrix_free(matrix, strings);
+        return 1;
+    }
 
     matrix_free(result_vector, strings);
 

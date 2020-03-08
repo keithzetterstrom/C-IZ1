@@ -15,23 +15,38 @@ int ** delete_nulls_from_matrix(int ** matrix, int strings, int columns)
 
     int result_count_strings = array_of_count_elements_initialization(matrix, array_of_count_elements, strings, columns);
     if (result_count_strings == -1)
+    {
+        free(array_of_count_elements);
         return NULL;
+    }
 
     int **result_vector = (int**)malloc(result_count_strings * sizeof(int*));
     if (!result_vector)
+    {
+        free(array_of_count_elements);
         return NULL;
+    }
     for(int i = 0; i < result_count_strings; i++)
     {
         result_vector[i] = (int *) malloc((array_of_count_elements[i]) * sizeof(int));
         if (!result_vector[i])
+        {
+            free(array_of_count_elements);
             return NULL;
+        }
     }
 
     if (result_vector_initialization(matrix, result_vector, strings, columns))
+    {
+        free(array_of_count_elements);
         return NULL;
+    }
 
     if (print_vector(result_vector, array_of_count_elements, result_count_strings))
+    {
+        free(array_of_count_elements);
         return NULL;
+    }
 
     free(array_of_count_elements);
 

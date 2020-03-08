@@ -27,7 +27,10 @@ int main(int argc, char const *argv[])
     {
         matrix[i] = (int *) malloc(columns * sizeof(int));
         if (matrix[i] == NULL)
+        {
+            matrix_free(matrix, i);
             return 1;
+        }
     }
 
     for (int i = 0; i < strings; ++i)
